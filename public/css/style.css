@@ -1,0 +1,144 @@
+body {
+  font-family: "Plus Jakarta Sans", sans-serif !important;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+.container {
+  flex: 1;
+}
+
+.fa-compass {
+  color: #fe424d;
+  font-size: 2rem;
+}
+
+.navbar {
+  height: 5rem;
+  background-color: rgb(249, 245, 245);
+}
+
+.nav-link {
+  color: #222222 !important;
+}
+
+/* for footer */
+.f-info {
+  background-color: #ddd;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 8rem;
+  justify-content: center;
+  gap: 0.3rem;
+}
+
+.f-info-links a {
+  color: #222222;
+  text-decoration: none;
+}
+.f-info-links a:hover {
+  text-decoration: underline;
+}
+
+.f-info-social i {
+  font-size: 1.2rem;
+  margin-right: 1rem;
+}
+
+@media (max-width: 767px) {
+  /* .navbar {
+    margin-bottom: 2rem !important;
+  } */
+
+  .navbar-collapse {
+    background-color: rgb(249, 245, 245);
+  }
+
+  .navbar-nav {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .nav-link {
+    padding: 1rem; /* Add padding to the navigation links for better touch interaction */
+    text-align: center; /* Center-align the text */
+    border-top: 1px solid #ddd; /* Add a border between the links */
+  }
+}
+
+/* card of images */
+.listing-card {
+  border: none !important;
+  margin: 1rem 0 !important;
+  /* color:black; */
+}
+
+.card-img-top {
+  border-radius: 1rem !important;
+  /* width: 100% !important; */
+  object-fit: cover !important;
+  /* border: none !important; */
+}
+
+.card-body {
+  padding: 0 !important;
+}
+
+.card-text {
+  font-weight: 400;
+}
+
+/* card effect */
+.card-img-overlay {
+  opacity: 0;
+  /* //if we write in the div is also render */
+}
+.card-img-overlay:hover {
+  opacity: 0.2;
+  background-color: white;
+}
+
+.listing-link {
+  text-decoration: none;
+}
+
+label {
+  font-weight: 500 !important;
+}
+/* .card:hover {
+  opacity: 0.2;
+  background-color: white;
+} */
+
+/* ///new route 
+*/
+.add-btn {
+  background-color: #fe424d !important;
+  border: none !important;
+  color: white !important;
+}
+
+/* //edit route */
+.edit-btn {
+  background-color: #fe424d !important;
+  border: none !important;
+  color: white !important;
+}
+
+/* //show route */
+.show-img {
+  height: 30vh !important;
+  /* width: 40vw !important; */
+}
+
+.edit-btn a{
+  text-decoration: none;
+  color: white;
+}
+
+.dlt-btn{
+   background-color: black !important;
+  border: none !important;
+  color: white !important;
+}
