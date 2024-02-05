@@ -23,11 +23,31 @@
                     <label for="image" class="form-label">Upload Image</label>
                     <input id="image" type="file" name="listing[image]" class="form-control" required>
                 </div>
+                <div class="mb-3">
+                    <label for="category" class="form-label">Choose Category</label>
+                    <select class="form-select" name="listing[category]" aria-label="Default select example"
+                        id="category" required>
+                        <option value="mountain">Mountain</option>
+                        <option value="farms">Farms</option>
+                        <option value="tree_house">Tree House</option>
+                        <option value="iconic_cities">Iconic Cities</option>
+                        <option value="castles">Castles</option>
+                        <option value="rooms">Rooms</option>
+                        <option value="golfing">Golfing</option>
+                        <option value="trending">Trending</option>
+                        <option value="arctic">Arctic</option>
+                        <option value="camping">Camping</option>
+                        <option value="pools">Pools</option>
+
+
+                    </select>
+                </div>
 
                 <div class="row">
                     <div class="mb-3  col-md-6">
                         <label for="price" class="form-label">Price</label>
-                        <input id="price" name="listing[price]" class="form-control" placeholder="1,200" required>
+                        <input type="number" id="price" name="listing[price]" class="form-control" placeholder="1,200"
+                            required>
                         <div class="invalid-feedback">Price should be valid</div>
 
 

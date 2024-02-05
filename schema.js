@@ -8,9 +8,9 @@ module.exports.listingSchema = Joi.object({
     location: Joi.string().required(),
     price: Joi.number().required().min(0),
     image: Joi.string().allow("", null),
+    category: Joi.string().required(),
   }).required(),
 });
-
 module.exports.reviewSchema = Joi.object({
   review: Joi.object({
     comment: Joi.string().required(),

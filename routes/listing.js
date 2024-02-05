@@ -7,6 +7,7 @@ const multer = require("multer");
 const { storage } = require("../cloudConfig.js");
 // const upload = multer({ dest: "uploads/" }); //baasically intialize the multer
 const upload = multer({ storage });
+const Listing = require("../models/listing.js");
 
 //index Route
 router
@@ -21,6 +22,22 @@ router
 // .post(upload.single("listing[image]"), (req, res) => {
 //   res.send(req.file);
 // });
+
+router.get(
+  "/search",
+  wrapAsync(async (req, res) => {
+    let { country } = req.query;
+
+    if (country) {
+      let listings = await Listing.find({ country: new RegExp(country, "i") });
+      if (listings.length > 0) {
+        res.render("./listings/showSearch.ejs", { listings });
+      } else {
+        throw new ExpressError(400, "This area of listing is not available");
+      }
+    }
+  })
+);
 
 //create new page
 router.get("/new", isLoggedIn, listingControllers.createNew);

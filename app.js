@@ -92,15 +92,15 @@ app.use((req, res, next) => {
   next();
 });
 
-app.get("/demoUser", async (req, res) => {
-  const fakeUser = new User({
-    email: "abc@gmail.com",
-    username: "abc",
-  });
+// app.get("/demoUser", async (req, res) => {
+//   const fakeUser = new User({
+//     email: "abc@gmail.com",
+//     username: "abc",
+//   });
 
-  let registerdUser = await User.register(fakeUser, "helloword");
-  res.send(registerdUser);
-});
+//   let registerdUser = await User.register(fakeUser, "helloword");
+//   res.send(registerdUser);
+// });
 
 //All Route
 app.use("/listings", listingsRouter);
