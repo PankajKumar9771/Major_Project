@@ -14,14 +14,15 @@
                 </div>
                 <div class="mb-3">
                     <label for="description" class="form-label">Description</label>
-                    <textarea name="listing[description]" class="form-control" cols="5" rows="3" required><%=listing.description%>
+                    <textarea name="listing[description]" class="form-control" cols="5" rows="3" required>
+                        <%=listing.description%>
                     </textarea>
                     <div class="invalid-feedback">Please enter a short description</div>
                 </div>
 
                 <div class="mb-3">
                     Original image
-                    
+
                     <br> <img src="<%=originalUrl %>" alt="previous-image">
                 </div>
                 <div class="mb-3">
@@ -29,6 +30,25 @@
                     <input type="file" name="listing[image]" class="form-control">
                 </div>
 
+                <div class="mb-3">
+                    <label for="category" class="form-label">Choose Category</label>
+                    <select class="form-select" name="listing[category]" aria-label="Default select example"
+                        id="category" required>
+                        <option value="mountain">Mountain</option>
+                        <option value="farms">Farms</option>
+                        <option value="tree_house">Tree House</option>
+                        <option value="iconic_cities">Iconic Cities</option>
+                        <option value="castles">Castles</option>
+                        <option value="rooms">Rooms</option>
+                        <option value="golfing">Golfing</option>
+                        <option value="trending">Trending</option>
+                        <option value="arctic">Arctic</option>
+                        <option value="camping">Camping</option>
+                        <option value="pools">Pools</option>
+
+
+                    </select>
+                </div>
                 <div class="row">
                     <div class="col-md-6 mb-3">
                         <label for="location" class="form-label">Location</label>

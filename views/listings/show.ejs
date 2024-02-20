@@ -23,6 +23,8 @@
                     <p class="card-text">
                         <%= listing.country %>
                     </p>
+                    <p>Type : <%=listing.category.toUpperCase() %>
+                    </p>
                 </div>
             </div>
             <% if(currUser && currUser._id.equals(listing.owner.id)){%>
@@ -95,13 +97,13 @@
                                             <%=review.comment %>
                                         </p>
                                         <%if (currUser && currUser._id.equals(review.author.id)){ %>
-                                        <form
-                                            action="/listings/<%= listing.id%>/reviews/<%=review.id %>/?_method=Delete"
-                                            method="post">
+                                            <form
+                                                action="/listings/<%= listing.id%>/reviews/<%=review.id %>/?_method=Delete"
+                                                method="post">
 
-                                            <button class="btn btn-sm btn-dark mb-3 ">Delete</button>
-                                        </form>
-                                        <% } %>
+                                                <button class="btn btn-sm btn-dark mb-3 ">Delete</button>
+                                            </form>
+                                            <% } %>
                                     </div>
                                 </div>
                                 <% }%>
