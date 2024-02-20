@@ -34,6 +34,9 @@
                     <label for="category" class="form-label">Choose Category</label>
                     <select class="form-select" name="listing[category]" aria-label="Default select example"
                         id="category" required>
+                        <option value="<%=listing.category%>">
+                            <%=listing.category %>
+                        </option>
                         <option value="mountain">Mountain</option>
                         <option value="farms">Farms</option>
                         <option value="tree_house">Tree House</option>
