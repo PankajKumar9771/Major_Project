@@ -23,6 +23,11 @@ router
 //   res.send(req.file);
 // });
 
+router.get("listing/category/trending", (req, res) => {
+  console.log("hello word");
+  res.send("hello");
+});
+
 router.get(
   "/search",
   wrapAsync(async (req, res) => {

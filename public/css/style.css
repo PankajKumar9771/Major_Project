@@ -22,7 +22,6 @@ body {
   color: #222222 !important;
 }
 
-
 /* for footer  it is for footer*/
 .f-info {
   background-color: #ddd;
@@ -47,6 +46,15 @@ body {
   margin-right: 1rem;
 }
 
+.f-info-social a {
+  text-decoration: none;
+  color: black;
+}
+
+.f-info-social a i:hover {
+  /* transition: 0.01ms; */
+  transform: scale(1.2);
+}
 @media (max-width: 767px) {
   /* .navbar {
     margin-bottom: 2rem !important;
