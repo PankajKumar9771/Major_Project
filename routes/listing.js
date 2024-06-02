@@ -23,26 +23,7 @@ router
 //   res.send(req.file);
 // });
 
-router.get("listing/category/trending", (req, res) => {
-  console.log("hello word");
-  res.send("hello");
-});
-
-router.get(
-  "/search",
-  wrapAsync(async (req, res) => {
-    let { country } = req.query;
-
-    if (country) {
-      let listings = await Listing.find({ country: new RegExp(country, "i") });
-      if (listings.length > 0) {
-        res.render("./listings/showSearch.ejs", { listings });
-      } else {
-        throw new ExpressError(400, "This area of listing is not available");
-      }
-    }
-  })
-);
+router.get("/search", wrapAsync(listingControllers.searchListing));
 
 //create new page
 router.get("/new", isLoggedIn, listingControllers.createNew);
@@ -67,5 +48,7 @@ router.get(
   isOwner,
   wrapAsync(listingControllers.renderEdit)
 );
+
+router.get("/filter/:category", wrapAsync(listingControllers.filterListing));
 
 module.exports = router;

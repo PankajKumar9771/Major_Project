@@ -23,6 +23,20 @@ module.exports.addNew = async (req, res, next) => {
   res.redirect("/listings");
 };
 
+//Search Listings
+module.exports.searchListing = async (req, res) => {
+  let { country } = req.query;
+
+  if (country) {
+    let listings = await Listing.find({ country: new RegExp(country, "i") });
+    if (listings.length > 0) {
+      res.render("./listings/showSearch.ejs", { listings });
+    } else {
+      throw new ExpressError(400, "This area of listing is not available");
+    }
+  }
+};
+
 // showPage
 module.exports.showPage = async (req, res) => {
   let { id } = req.params;
@@ -40,7 +54,7 @@ module.exports.showPage = async (req, res) => {
 module.exports.renderEdit = async (req, res) => {
   let { id } = req.params;
   const listing = await Listing.findById(id);
-  if(!listing) {
+  if (!listing) {
     req.flash("error", "Listing you requested for does not exist !");
     res.redirect("/listings");
   }
@@ -70,4 +84,28 @@ module.exports.destroyListing = async (req, res) => {
   console.log(deleteListing);
   req.flash("success", "Listing is deleted");
   res.redirect("/listings");
+};
+
+//Filter the Listings
+module.exports.filterListing = async (req, res) => {
+  const category2 = req.params.category;
+  console.log(category2);
+
+  try {
+    const allListing = await Listing.find({
+      category: new RegExp(category2, "i"),
+    });
+    if (allListing.length === 0) {
+      req.flash(
+        "error",
+        "Listing is not availavle related to the this category."
+      );
+      res.redirect("/listings");
+    } else {
+      res.render("./listings/index.ejs", { allListing });
+    }
+  } catch (err) {
+    console.error(err);
+    res.status(500).send("Error fetching listings");
+  }
 };

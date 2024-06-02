@@ -32,3 +32,4 @@ module.exports.reviewSchema = Joi.object({
 //   }).required(),
 // });
 // module.exports = listingSchema;
+// Joi allows the developers to build the Javascript blueprints and make sure that the application accepts the accurately formatted data.

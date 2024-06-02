@@ -1,73 +1,95 @@
 <% layout("/layouts/boilerplate")%>
-
     <div id="filters">
-        <div class="filter">
-            <div class="icon">
-                <i class="fa-solid fa-fire"></i>
-            </div>
-            <p>Trending</p>
-        </div>
-        <div class="filter">
-            <div class="icon">
-                <i class="fa-solid fa-bed"></i>
-            </div>
-            <p>Rooms</p>
-        </div>
-        <div class="filter">
-            <div class="icon">
-                <i class="fa-solid fa-city"></i>
-            </div>
-            <p>Iconic Cities</p>
-        </div>
-        <div class="filter">
-            <div class="icon">
-                <i class="fa-solid fa-mountain"></i>
-            </div>
-            <p>Mountain</p>
-        </div>
-        <div class="filter">
-            <div class="icon">
-                <i class="fa-brands fa-fort-awesome"></i>
-            </div>
-            <p>Castles</p>
-        </div>
-        <div class="filter">
-            <div class="icon">
-                <i class="fa-solid fa-person-swimming"></i>
-            </div>
-            <p>Pools</p>
-        </div>
-        <div class="filter">
-            <div class="icon">
-                <i class="fa-solid fa-campground"></i>
-            </div>
-            <p>Camping</p>
-        </div>
-        <div class="filter">
-            <div class="icon">
-                <i class="fa-solid fa-cow"></i>
-            </div>
-            <p>Farms</p>
-        </div>
-        <div class="filter">
-            <div class="icon">
-                <i class="fa-solid fa-snowflake"></i>
-            </div>
-            <p>Arctic</p>
-        </div>
-        <div class="filter">
-            <div class="icon">
-                <i class="fa-solid fa-warehouse"></i>
-            </div>
-            <p>Tree-house</p>
-        </div>
 
         <div class="filter">
-            <div class="icon">
-                <i class="fa-solid fa-golf-ball-tee"></i>
-            </div>
-            <p>Golfing</p>
+            <a class="text-decoration-none text-dark" href="/listings/filter/Trending">
+                <div class="icon">
+                    <i class="fa-solid fa-fire"></i>
+                </div>
+                <p>Trending</p>
+            </a>
         </div>
+        <div class="filter">
+            <a class="text-decoration-none text-dark" href="/listings/filter/Rooms">
+                <div class="icon">
+                    <i class="fa-solid fa-bed"></i>
+                </div>
+                <p>Rooms</p>
+            </a>
+        </div>
+        <div class="filter">
+            <a class="text-decoration-none text-dark" href="/listings/filter/Iconic_Cities">
+                <div class="icon">
+                    <i class="fa-solid fa-city"></i>
+                </div>
+                <p>Iconic Cities</p>
+            </a>
+        </div>
+        <div class="filter">
+            <a class="text-decoration-none text-dark" href="/listings/filter/Mountain">
+                <div class="icon">
+                    <i class="fa-solid fa-mountain"></i>
+                </div>
+                <p>Mountain</p>
+            </a>
+        </div>
+        <div class="filter">
+            <a class="text-decoration-none text-dark" href="/listings/filter/Castles">
+                <div class="icon">
+                    <i class="fa-brands fa-fort-awesome"></i>
+                </div>
+                <p>Castles</p>
+            </a>
+        </div>
+        <div class="filter">
+            <a class="text-decoration-none text-dark" href="/listings/filter/Pools">
+                <div class="icon">
+                    <i class="fa-solid fa-person-swimming"></i>
+                </div>
+                <p>Pools</p>
+            </a>
+        </div>
+        <div class="filter">
+            <a class="text-decoration-none text-dark" href="/listings/filter/Camping">
+                <div class="icon">
+                    <i class="fa-solid fa-campground"></i>
+                </div>
+                <p>Camping</p>
+            </a>
+        </div>
+        <div class="filter">
+            <a class="text-decoration-none text-dark" href="/listings/filter/Farms">
+                <div class="icon">
+                    <i class="fa-solid fa-cow"></i>
+                </div>
+                <p>Farms</p>
+            </a>
+        </div>
+        <div class="filter">
+            <a class="text-decoration-none text-dark" href="/listings/filter/Arctic">
+                <div class="icon">
+                    <i class="fa-solid fa-snowflake"></i>
+                </div>
+                <p>Arctic</p>
+            </a>
+        </div>
+        <div class="filter">
+            <a class="text-decoration-none text-dark" href="/listings/filter/Tree_house">
+                <div class="icon">
+                    <i class="fa-solid fa-warehouse"></i>
+                </div>
+                <p>Tree-house</p>
+            </a>
+        </div>
+        <div class="filter">
+            <a class="text-decoration-none text-dark" href="/listings/filter/Golfing">
+                <div class="icon">
+                    <i class="fa-solid fa-golf-ball-tee"></i>
+                </div>
+                <p>Golfing</p>
+            </a>
+        </div>
+
 
         <!-- //for taxes of the toggler -->
         <div class="tax-toggle">
@@ -76,8 +98,8 @@
                 <label class="form-check-label" for="flexSwitchCheckDefault">Display total after taxes </label>
             </div>
         </div>
-
     </div>
+
 
     <div class="row row-cols-lg-4 row-cols-md-3 row-cols-sm-2 row-cols-1">
 
@@ -97,19 +119,11 @@
                             &#8377; <%= listing.price.toLocaleString("en-IN") %> /night
                                 <span class="tax-info">&nbsp;
                                     &nbsp;&#8377;<%= (listing.price+(listing.price*0.18)).toLocaleString("en-IN") %>
-                                        &nbsp; <i>+18%
-                                            GST</i></span>
+                                        &nbsp; <i>+18% GST</i>
+                                </span>
                         </p>
-
-
                     </div>
                 </div>
             </a>
             <% } %>
     </div>
-
-
-
-
-
-    
