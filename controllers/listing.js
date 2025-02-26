@@ -1,7 +1,9 @@
-const Listing = require("../models/listing");
+const Listing = require("../models/listing.js");
+const ExpressError = require("../utilitu/ExpressError.js");
 
 module.exports.index = async (req, res) => {
   let allListing = await Listing.find({});
+  console.log(allListing);
   res.render("./listings/index.ejs", { allListing });
 };
 
@@ -15,6 +17,7 @@ module.exports.addNew = async (req, res, next) => {
   let filename = req.file.filename;
   let url = req.file.path;
   let newListing = new Listing(req.body.listing);
+  console.log(req.body.listing);
   newListing.owner = req.user._id;
   newListing.image = { url, filename };
   console.log(newListing);
@@ -28,9 +31,10 @@ module.exports.searchListing = async (req, res) => {
   let { country } = req.query;
 
   if (country) {
-    let listings = await Listing.find({ country: new RegExp(country, "i") });
-    if (listings.length > 0) {
-      res.render("./listings/showSearch.ejs", { listings });
+    let allListing = await Listing.find({ country: new RegExp(country, "i") });
+    // console.log(listings);
+    if (allListing.length > 0) {
+      res.render("./listings/index.ejs", { allListing });
     } else {
       throw new ExpressError(400, "This area of listing is not available");
     }
